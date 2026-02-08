@@ -1,0 +1,61 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Client-side profile photo upload and avatar rendering",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "summary": "Extend ProfileData and localStorage persistence to include an optional client-stored profile photo value.",
+      "acceptanceCriteria": [
+        "ProfileData includes a new optional field for the user photo (e.g., a data URL string).",
+        "The photo field is saved to and loaded from the existing localStorage profile storage (same storage key as current profile data).",
+        "Existing saved profiles without a photo continue to load without errors (photo defaults to undefined)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/profile/types.ts",
+          "operation": "modify",
+          "description": "Add an optional profile photo field (e.g., photoDataUrl?: string) to ProfileData so the app can represent a user-provided avatar stored client-side."
+        },
+        {
+          "path": "frontend/src/profile/storage.ts",
+          "operation": "modify",
+          "description": "Harden profile loading to safely handle older stored shapes and ensure missing optional photo data remains undefined while keeping the same localStorage key."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add image upload, preview, and clear controls to the Resume Intake manual entry flow, persisting the selected photo in the saved profile.",
+      "acceptanceCriteria": [
+        "In the ResumeIntakeDialog manual entry tab, there is a clearly labeled control (English text) to upload a profile photo.",
+        "After selecting an image, the dialog shows an immediate preview of the chosen photo.",
+        "The user can remove/clear the selected photo before submitting.",
+        "Submitting the dialog saves the selected photo into the persisted profile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/resume/ResumeIntakeDialog.tsx",
+          "operation": "modify",
+          "description": "In the Manual Entry tab, add a labeled image file chooser (accepting image/*), a preview area, and a clear/remove button; update the manual submit logic to include the optional photo field in the submitted ProfileData. Use shadcn-ui form primitives already present in this file (e.g., Label/Input/Button/Card) to keep styling consistent. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Display the uploaded profile photo as the hero avatar when present, otherwise use the existing generated illustration, with responsive cropping/scaling.",
+      "acceptanceCriteria": [
+        "HeroSection displays the uploaded photo when the profile includes one.",
+        "When no uploaded photo exists, the UI continues to display the existing /assets/generated/profile-illustration.dim_768x768.png image.",
+        "The avatar image remains appropriately cropped/scaled (no layout break) across mobile and desktop breakpoints."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Render the hero avatar image conditionally: if profile photo data exists, use it as the image source and apply responsive sizing with stable cropping (e.g., an aspect-preserving container with overflow hidden and object-fit cover); otherwise keep the current fallback to the generated illustration at /assets/generated/profile-illustration.dim_768x768.png."
+        }
+      ]
+    }
+  ]
+}

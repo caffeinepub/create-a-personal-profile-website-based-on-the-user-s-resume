@@ -1,0 +1,65 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T13:59:51.477Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-6",
+        "summary": "Extend the profile data model to support an optional user-provided profile photo, stored client-side, so the photo persists across reloads along with the rest of the profile.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/profile/types.ts",
+          "frontend/src/profile/storage.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/profile/types.ts",
+          "frontend/src/profile/storage.ts"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add a profile photo upload control to the existing profile editing flow (the Resume Intake dialog) to let the user choose an image file from their device, preview it, and optionally remove/clear it.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/resume/ResumeIntakeDialog.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/resume/ResumeIntakeDialog.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Render the user-uploaded profile photo on the site as the avatar image when present; otherwise fall back to the existing generated illustration asset.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/sections/HeroSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/sections/HeroSection.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/resume/ResumeIntakeDialog.tsx",
+    "frontend/src/components/sections/HeroSection.tsx",
+    "frontend/src/profile/storage.ts",
+    "frontend/src/profile/types.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

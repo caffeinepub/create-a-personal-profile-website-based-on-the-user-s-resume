@@ -1,0 +1,86 @@
+{
+  "kind": "build_request",
+  "title": "Allow user to upload and display a real profile photo",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "text": "Extend the profile data model to support an optional user-provided profile photo, stored client-side, so the photo persists across reloads along with the rest of the profile.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "add my photo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "ProfileData includes a new optional field for the user photo (e.g., a data URL string).",
+        "The photo field is saved to and loaded from the existing localStorage profile storage (same storage key as current profile data).",
+        "Existing saved profiles without a photo continue to load without errors (photo defaults to undefined)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add a profile photo upload control to the existing profile editing flow (the Resume Intake dialog) to let the user choose an image file from their device, preview it, and optionally remove/clear it.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "add my photo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "In the ResumeIntakeDialog manual entry tab, there is a clearly labeled control (English text) to upload a profile photo.",
+        "After selecting an image, the dialog shows an immediate preview of the chosen photo.",
+        "The user can remove/clear the selected photo before submitting.",
+        "Submitting the dialog saves the selected photo into the persisted profile."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Render the user-uploaded profile photo on the site as the avatar image when present; otherwise fall back to the existing generated illustration asset.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "add my photo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "HeroSection displays the uploaded photo when the profile includes one.",
+        "When no uploaded photo exists, the UI continues to display the existing /assets/generated/profile-illustration.dim_768x768.png image.",
+        "The avatar image remains appropriately cropped/scaled (no layout break) across mobile and desktop breakpoints."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under frontend/src/components/ui or any paths listed in frontend.immutablePaths.",
+    "Keep the backend as-is (single empty Motoko actor); do not add backend photo storage for this change.",
+    "All user-facing text introduced by this change must be in English."
+  ],
+  "nonGoals": [
+    "No server-side or canister-side storage of the uploaded photo.",
+    "No third-party image hosting or external storage integration.",
+    "No authentication changes."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

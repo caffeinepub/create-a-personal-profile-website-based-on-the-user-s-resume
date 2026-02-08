@@ -1,2 +1,3 @@
-# create-a-personal-profile-website-based-on-the-user-s-resume
-Exported from Caffeine project: Create a personal profile website based on the user's resume
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

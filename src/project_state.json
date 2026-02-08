@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Profile/personal website to be created based on the user's resume.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-add-a-resume-data-intake-flow-so-the-site-can-be-built-from-the-user-s-resume-content-provide-a-clear-ui-prompt-instructions-asking-the-user-to-paste-their-resume-text-or-provide-structured-fields-and-generate-populate-all-page-sections-from-that-content-in-english",
+      "title": "Add a resume data intake flow so the site can be built from the user's resume content: provide a clear UI prompt/instructions asking the user to paste their resume text (or provide structured fields), and generate/populate all page sections from that content in English.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-responsive-single-page-profile-website-layout-with-standard-resume-driven-sections-hero-name-title-short-summary-about-experience-education-skills-projects-and-contact-include-a-top-navigation-that-scrolls-to-sections-and-works-well-on-mobile",
+      "title": "Implement a responsive, single-page profile website layout with standard resume-driven sections: Hero (name + title + short summary), About, Experience, Education, Skills, Projects, and Contact; include a top navigation that scrolls to sections and works well on mobile.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-and-share-metadata-and-a-polished-footer-set-page-title-meta-description-and-open-graph-twitter-card-tags-using-the-resume-derived-name-title-summary-when-available-add-a-footer-with-location-if-in-resume-email-if-in-resume-and-social-links-if-in-resume",
+      "title": "Add basic SEO and share metadata and a polished footer: set page title, meta description, and Open Graph/Twitter card tags using the resume-derived name/title/summary when available; add a footer with location (if in resume), email (if in resume), and social links (if in resume).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-choose-and-apply-a-coherent-visual-theme-for-the-profile-site-colors-typography-spacing-and-component-styling-and-enforce-it-consistently-across-all-sections-avoid-a-blue-purple-default-palette",
+      "title": "Choose and apply a coherent visual theme for the profile site (colors, typography, spacing, and component styling) and enforce it consistently across all sections; avoid a blue/purple default palette.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-image-assets-to-the-frontend-static-assets-and-render-them-in-the-ui-use-the-hero-background-image-in-the-hero-section-and-use-the-profile-illustration-avatar-image-in-the-hero-about-area",
+      "title": "Add the generated image assets to the frontend static assets and render them in the UI: use the hero background image in the Hero section and use the profile illustration/avatar image in the Hero/About area.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-the-profile-data-model-to-support-an-optional-user-provided-profile-photo-stored-client-side-so-the-photo-persists-across-reloads-along-with-the-rest-of-the-profile",
+      "title": "Extend the profile data model to support an optional user-provided profile photo, stored client-side, so the photo persists across reloads along with the rest of the profile.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-profile-photo-upload-control-to-the-existing-profile-editing-flow-the-resume-intake-dialog-to-let-the-user-choose-an-image-file-from-their-device-preview-it-and-optionally-remove-clear-it",
+      "title": "Add a profile photo upload control to the existing profile editing flow (the Resume Intake dialog) to let the user choose an image file from their device, preview it, and optionally remove/clear it.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-user-uploaded-profile-photo-on-the-site-as-the-avatar-image-when-present-otherwise-fall-back-to-the-existing-generated-illustration-asset",
+      "title": "Render the user-uploaded profile photo on the site as the avatar image when present; otherwise fall back to the existing generated illustration asset.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a personal profile website based on the user's resume",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Allow the user to add/upload their real photo and display it as the profile/avatar image on the site",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Create a personal profile website based on the user's resume",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
